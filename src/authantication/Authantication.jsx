@@ -10,7 +10,7 @@ const Authantication = () => {
     <div className="container">
       <h1>{ui.title}</h1>
       {ui.wrapper && (
-        <div className={animateDenied && "active"}>
+        <div className={animateDenied && "active "}>
           <form className="form" action="">
             <label htmlFor="">User name</label>
             <input type="text" placeholder="Enter your name!" value="" />
