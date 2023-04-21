@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Auth from "./components/Auth";
 
 const Authantication = () => {
   const [ui, setUi] = useState({
@@ -23,6 +24,7 @@ const Authantication = () => {
           </form>
         </div>
       )}
+      <Auth />
     </div>
   );
 };
