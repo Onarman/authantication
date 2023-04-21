@@ -7,15 +7,12 @@ const Auth = () => {
   return (
     <div>
       {auth.status === null ? (
-        ""
-      ) : auth.status === true ? (
-        <div className="alert success">success</div>
-      ) : null}
-      
-      {auth.status === null ? (
         <button className="btn-success btn block">Login</button>
       ) : auth.status === true ? (
-        <button className="btn-danger btn block">Logout</button>
+        <>
+          <div className="alert success">success</div>
+          <button className="btn-danger btn block">Logout</button>
+        </>
       ) : (
         <button className="btn-warning btn block">Try Again</button>
       )}
