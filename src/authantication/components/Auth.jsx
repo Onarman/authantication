@@ -1,23 +1,25 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
+import Alert from "./Alert";
 import { AuthContext } from "../context/AuthContext";
 
-const Auth = () => {
+export default function Auth() {
   const auth = useContext(AuthContext);
-  console.log(auth);
   return (
     <div>
-      {auth.status === null ? (
-        <button className="btn-success btn block">Login</button>
-      ) : auth.status === true ? (
+      {auth.status === null && (
+        <button className="btn-success btn-block" onClick={auth.login}>Login</button>
+      )}
+
+      {auth.status === false && (
+        <button className="btn-info btn-block" onClick={auth.login}>Try Again</button>
+      )}
+
+      {auth.status === true && (
         <>
-          <div className="alert success">success</div>
-          <button className="btn-danger btn block">Logout</button>
+          <Alert type={"success"} message={"Login Success"} />
+          <button className="btn-danger btn-block" onClick={auth.logout}>Logout</button>
         </>
-      ) : (
-        <button className="btn-warning btn block">Try Again</button>
       )}
     </div>
   );
-};
-
-export default Auth;
+}
